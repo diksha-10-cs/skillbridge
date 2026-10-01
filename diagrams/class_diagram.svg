@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 730" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;">
+  <defs>
+    <!-- Open Arrow for UML Dependency -->
+    <marker id="arrow-cd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#111827"/>
+    </marker>
+    <filter id="shadow-gscd" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="575" y="40" text-anchor="middle" font-size="24" font-weight="800" fill="#111827" letter-spacing="0.5">SkillBridge System UML Class Diagram</text>
+  <text x="575" y="66" text-anchor="middle" font-size="16.5" font-weight="700" fill="#374151">Object-Oriented Architecture, Schema Models &amp; Controllers (Grayscale)</text>
+
+  <!-- ======================================================== -->
+  <!-- CLASS 1: User (Top Left)                                 -->
+  <!-- ======================================================== -->
+  <g transform="translate(60, 105)" filter="url(#shadow-gscd)">
+    <rect x="0" y="0" width="290" height="255" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="290" height="34" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"/>
+    <text x="145" y="23" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff" letter-spacing="1">User (Model)</text>
+
+    <!-- Attributes -->
+    <text x="14" y="56" font-size="12" font-family="monospace" fill="#111827">- _id: ObjectId</text>
+    <text x="14" y="75" font-size="12" font-family="monospace" fill="#111827">- fullName: String</text>
+    <text x="14" y="94" font-size="12" font-family="monospace" fill="#111827">- email: String</text>
+    <text x="14" y="113" font-size="12" font-family="monospace" fill="#111827">- password: String (Bcrypt)</text>
+    <text x="14" y="132" font-size="12" font-family="monospace" fill="#111827">- course: String</text>
+    <text x="14" y="151" font-size="12" font-family="monospace" fill="#111827">- college: String</text>
+    <text x="14" y="170" font-size="12" font-family="monospace" fill="#111827">- skills: String</text>
+
+    <!-- Divider Line -->
+    <line x1="0" y1="184" x2="290" y2="184" stroke="#111827" stroke-width="1.5"/>
+
+    <!-- Methods -->
+    <text x="14" y="206" font-size="12" font-family="monospace" fill="#111827">+ matchPassword(pwd): Boolean</text>
+    <text x="14" y="226" font-size="12" font-family="monospace" fill="#111827">+ getProfile(): UserDTO</text>
+    <text x="14" y="246" font-size="12" font-family="monospace" fill="#111827">+ updateProfile(data): UserDTO</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- CLASS 2: Internship (Top Right)                          -->
+  <!-- ======================================================== -->
+  <g transform="translate(760, 105)" filter="url(#shadow-gscd)">
+    <rect x="0" y="0" width="310" height="270" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="310" height="34" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"/>
+    <text x="155" y="23" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff" letter-spacing="1">Internship (Model)</text>
+
+    <!-- Attributes -->
+    <text x="14" y="56" font-size="12" font-family="monospace" fill="#111827">- _id: ObjectId</text>
+    <text x="14" y="75" font-size="12" font-family="monospace" fill="#111827">- user: ObjectId (Ref: User)</text>
+    <text x="14" y="94" font-size="12" font-family="monospace" fill="#111827">- company: String</text>
+    <text x="14" y="113" font-size="12" font-family="monospace" fill="#111827">- role: String</text>
+    <text x="14" y="132" font-size="12" font-family="monospace" fill="#111827">- date: String (YYYY-MM-DD)</text>
+    <text x="14" y="151" font-size="12" font-family="monospace" fill="#111827">- status: ApplicationStatusEnum</text>
+    <text x="14" y="170" font-size="12" font-family="monospace" fill="#111827">- location: String</text>
+    <text x="14" y="189" font-size="12" font-family="monospace" fill="#111827">- stipend: String</text>
+
+    <!-- Divider Line -->
+    <line x1="0" y1="202" x2="310" y2="202" stroke="#111827" stroke-width="1.5"/>
+
+    <!-- Methods -->
+    <text x="14" y="224" font-size="12" font-family="monospace" fill="#111827">+ updateStatus(newStatus): void</text>
+    <text x="14" y="244" font-size="12" font-family="monospace" fill="#111827">+ updateDetails(data): void</text>
+    <text x="14" y="264" font-size="12" font-family="monospace" fill="#111827">+ deleteApplication(): Boolean</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- ASSOCIATION: User 1 to 0..* Internship                  -->
+  <!-- ======================================================== -->
+  <line x1="350" y1="210" x2="760" y2="210" stroke="#111827" stroke-width="2"/>
+  <text x="370" y="200" font-size="14" font-weight="900" fill="#111827">1</text>
+  <text x="735" y="200" font-size="14" font-weight="900" fill="#111827">0..*</text>
+  
+  <!-- Clear centered label (Shifted to left so diamond does not collide) -->
+  <rect x="420" y="197" width="130" height="24" fill="#ffffff" rx="3" stroke="#9ca3af" stroke-width="1"/>
+  <text x="485" y="214" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">applies &amp; tracks ►</text>
+
+  <!-- ======================================================== -->
+  <!-- CLASS 3: DashboardStats (Center)                         -->
+  <!-- ======================================================== -->
+  <g transform="translate(435, 275)" filter="url(#shadow-gscd)">
+    <rect x="0" y="0" width="280" height="185" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="280" height="32" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"/>
+    <text x="140" y="22" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff" letter-spacing="1">DashboardStats</text>
+
+    <!-- Attributes -->
+    <text x="14" y="53" font-size="12" font-family="monospace" fill="#111827">- total: Integer</text>
+    <text x="14" y="72" font-size="12" font-family="monospace" fill="#111827">- applied: Integer</text>
+    <text x="14" y="91" font-size="12" font-family="monospace" fill="#111827">- interview: Integer</text>
+    <text x="14" y="110" font-size="12" font-family="monospace" fill="#111827">- selected: Integer</text>
+    <text x="14" y="129" font-size="12" font-family="monospace" fill="#111827">- rejected: Integer</text>
+
+    <!-- Divider Line -->
+    <line x1="0" y1="140" x2="280" y2="140" stroke="#111827" stroke-width="1.5"/>
+
+    <!-- Methods -->
+    <text x="14" y="160" font-size="12" font-family="monospace" fill="#111827">+ computeMetrics(userId): Stats</text>
+    <text x="14" y="178" font-size="12" font-family="monospace" fill="#111827">+ getConversionRate(): Float</text>
+  </g>
+
+  <!-- Aggregation to DashboardStats -->
+  <line x1="575" y1="210" x2="575" y2="273" stroke="#111827" stroke-width="1.8"/>
+  <!-- Hollow Diamond for Aggregation -->
+  <polygon points="575,210 582,219 575,228 568,219" fill="#ffffff" stroke="#111827" stroke-width="1.8"/>
+
+  <!-- ======================================================== -->
+  <!-- CLASS 4: AuthController (Bottom Left)                    -->
+  <!-- ======================================================== -->
+  <g transform="translate(60, 475)" filter="url(#shadow-gscd)">
+    <rect x="0" y="0" width="290" height="175" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="290" height="32" rx="4" fill="#374151" stroke="#111827" stroke-width="1.5"/>
+    <text x="145" y="22" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff" letter-spacing="1">AuthController</text>
+
+    <!-- Methods -->
+    <text x="14" y="58" font-size="11.5" font-family="monospace" fill="#111827">+ register(req, res): Promise</text>
+    <text x="14" y="80" font-size="11.5" font-family="monospace" fill="#111827">+ login(req, res): Promise</text>
+    <text x="14" y="102" font-size="11.5" font-family="monospace" fill="#111827">+ getProfile(req, res): Promise</text>
+    <text x="14" y="124" font-size="11.5" font-family="monospace" fill="#111827">+ updateProfile(req, res): Promise</text>
+    <text x="14" y="146" font-size="11.5" font-family="monospace" fill="#111827">- seedStarterData(userId): void</text>
+    <text x="14" y="166" font-size="11.5" font-family="monospace" fill="#111827">- generateToken(id): String</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- CLASS 5: InternshipController (Bottom Right)             -->
+  <!-- ======================================================== -->
+  <g transform="translate(760, 475)" filter="url(#shadow-gscd)">
+    <rect x="0" y="0" width="310" height="175" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="310" height="32" rx="4" fill="#374151" stroke="#111827" stroke-width="1.5"/>
+    <text x="155" y="22" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff" letter-spacing="1">InternshipController</text>
+
+    <!-- Methods -->
+    <text x="14" y="58" font-size="11.5" font-family="monospace" fill="#111827">+ getInternships(req, res): Promise</text>
+    <text x="14" y="80" font-size="11.5" font-family="monospace" fill="#111827">+ createInternship(req, res): Promise</text>
+    <text x="14" y="102" font-size="11.5" font-family="monospace" fill="#111827">+ updateInternship(req, res): Promise</text>
+    <text x="14" y="124" font-size="11.5" font-family="monospace" fill="#111827">+ deleteInternship(req, res): Promise</text>
+    <text x="14" y="146" font-size="11.5" font-family="monospace" fill="#111827">+ getDashboardStats(req, res): Promise</text>
+    <text x="14" y="166" font-size="11.5" font-family="monospace" fill="#111827">+ filterByStatus(status): Array</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- CLASS 6: AuthMiddleware (Bottom Center)                  -->
+  <!-- ======================================================== -->
+  <g transform="translate(435, 515)" filter="url(#shadow-gscd)">
+    <rect x="0" y="0" width="280" height="100" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="280" height="30" rx="4" fill="#374151" stroke="#111827" stroke-width="1.5"/>
+    <text x="140" y="21" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="1">AuthMiddleware</text>
+
+    <text x="14" y="56" font-size="11.5" font-family="monospace" fill="#111827">+ protect(req, res, next): void</text>
+    <text x="14" y="78" font-size="11.5" font-family="monospace" fill="#111827">- verifyJWTToken(token): Object</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- DEPENDENCY CONNECTORS (Dashed lines with open arrows)    -->
+  <!-- ======================================================== -->
+  <!-- AuthController -> User -->
+  <line x1="205" y1="475" x2="205" y2="362" stroke="#111827" stroke-width="1.8" stroke-dasharray="6,4" marker-end="url(#arrow-cd)"/>
+  <rect x="180" y="405" width="50" height="18" fill="#ffffff"/>
+  <text x="205" y="418" text-anchor="middle" font-size="11" font-style="italic" font-weight="700" fill="#111827">&lt;&lt;uses&gt;&gt;</text>
+
+  <!-- InternshipController -> Internship -->
+  <line x1="915" y1="475" x2="915" y2="377" stroke="#111827" stroke-width="1.8" stroke-dasharray="6,4" marker-end="url(#arrow-cd)"/>
+  <rect x="890" y="415" width="50" height="18" fill="#ffffff"/>
+  <text x="915" y="428" text-anchor="middle" font-size="11" font-style="italic" font-weight="700" fill="#111827">&lt;&lt;uses&gt;&gt;</text>
+
+  <!-- AuthMiddleware -> AuthController -->
+  <line x1="435" y1="565" x2="352" y2="565" stroke="#111827" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-cd)"/>
+
+  <!-- AuthMiddleware -> InternshipController -->
+  <line x1="715" y1="565" x2="758" y2="565" stroke="#111827" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-cd)"/>
+</svg>

@@ -1,0 +1,196 @@
+.navbar {
+  background: var(--navbar-bg, rgba(255, 255, 255, 0.92));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--navbar-border, rgba(226, 232, 240, 0.8));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-container {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--text-primary, #123b63);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.3px;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--primary-gradient, linear-gradient(135deg, #123b63, #4da3d9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.logo span {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary, #334e68);
+  font-weight: 600;
+  font-size: 14.5px;
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: var(--primary-color, #0284c7);
+  background: var(--bg-tertiary, #f0f8ff);
+}
+
+.nav-link.active {
+  color: var(--primary-color, #0284c7);
+  background: var(--bg-tertiary, #eef8ff);
+}
+
+.user-badge {
+  background: var(--bg-tertiary, #eef8ff);
+  color: var(--text-primary, #123b63);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13.5px;
+  border: 1px solid var(--border-color, #bae6fd);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Amazon / Flipkart Style Nav Action Buttons */
+.nav-btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn-primary {
+  background: var(--primary-gradient, linear-gradient(135deg, #2563eb, #0284c7));
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.nav-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+}
+
+.nav-btn-outline {
+  background: transparent;
+  color: var(--danger-text, #ef4444) !important;
+  border: 1.5px solid var(--danger-text, #ef4444);
+  box-shadow: none;
+}
+
+.nav-btn-outline:hover {
+  background: #ef4444;
+  color: #ffffff !important;
+}
+
+.nav-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Mobile Toggle Hamburger */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-primary, #123b63);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+@media (max-width: 920px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card, #ffffff);
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 11px 14px;
+  }
+
+  .user-badge {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    min-height: 44px;
+  }
+}

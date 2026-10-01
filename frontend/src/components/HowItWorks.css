@@ -1,0 +1,175 @@
+.how-it-works {
+  padding: 90px 20px;
+  background: linear-gradient(180deg, var(--bg-secondary, #f8fafc) 0%, var(--bg-tertiary, #eef8ff) 100%);
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .how-it-works {
+  background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%);
+}
+
+.how-container {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.how-header {
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+
+.how-pill {
+  display: inline-block;
+  background: var(--bg-card, #ffffff);
+  color: var(--primary-color, #0284c7);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border-color, transparent);
+  box-shadow: var(--card-shadow);
+}
+
+.how-header h2 {
+  color: var(--text-primary, #0f2c4c);
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.how-header p {
+  color: var(--text-muted, #64748b);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.step-card {
+  background: var(--bg-card, #ffffff);
+  border: 1.5px solid var(--border-color, #dceefa);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: left;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-color, #38bdf8);
+}
+
+.step-number {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--border-color, #e2e8f0);
+  line-height: 1;
+}
+
+.step-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--primary-gradient, linear-gradient(135deg, #123b63, #2563eb));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.step-card h3 {
+  color: var(--text-primary, #0f2c4c);
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.step-card p {
+  color: var(--text-muted, #64748b);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.how-cta-banner {
+  background: var(--primary-gradient, linear-gradient(135deg, #123b63 0%, #1e40af 100%));
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 45px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: var(--card-shadow-hover);
+  text-align: left;
+}
+
+.how-cta-banner h3 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.how-cta-banner p {
+  color: #bae6fd;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Amazon / Flipkart Style Bold CTA Button */
+.how-cta-btn {
+  background: #ffffff;
+  color: #0f2c4c;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 15.5px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  min-height: 48px;
+}
+
+.how-cta-btn:hover {
+  background: var(--accent-color, #38bdf8);
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto 40px;
+  }
+  .how-cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .how-cta-btn {
+    width: 100%;
+  }
+}

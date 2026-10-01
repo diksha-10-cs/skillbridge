@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 720" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;">
+  <defs>
+    <marker id="arrow-gser" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#111827"/>
+    </marker>
+    <filter id="shadow-gser" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="575" y="42" text-anchor="middle" font-size="24" font-weight="800" fill="#111827" letter-spacing="0.5">SkillBridge – Student Internship &amp; Career Management Portal</text>
+  <text x="575" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#374151">Entity Relationship Diagram (ERD) – Grayscale Schema</text>
+
+  <!-- Entity 1: USER (Top Center) -->
+  <g transform="translate(440, 105)" filter="url(#shadow-gser)">
+    <rect x="0" y="0" width="260" height="215" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="260" height="34" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"/>
+    <text x="130" y="23" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff" letter-spacing="1">USER</text>
+
+    <!-- Attributes -->
+    <rect x="12" y="46" width="30" height="18" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+    <text x="27" y="59" text-anchor="middle" font-size="11" font-weight="800" fill="#111827">PK</text>
+    <text x="52" y="60" font-size="13" font-weight="700" fill="#111827">user_id</text>
+
+    <text x="52" y="82" font-size="12.5" fill="#1f2937">fullName</text>
+    <text x="52" y="102" font-size="12.5" fill="#1f2937">email (unique)</text>
+    <text x="52" y="122" font-size="12.5" fill="#1f2937">password (hashed)</text>
+    <text x="52" y="142" font-size="12.5" fill="#1f2937">course</text>
+    <text x="52" y="162" font-size="12.5" fill="#1f2937">college</text>
+    <text x="52" y="182" font-size="12.5" fill="#1f2937">skills</text>
+    <text x="52" y="202" font-size="12.5" fill="#1f2937">projects</text>
+  </g>
+
+  <!-- Entity 2: INTERNSHIP (Bottom Left) -->
+  <g transform="translate(65, 390)" filter="url(#shadow-gser)">
+    <rect x="0" y="0" width="275" height="240" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="275" height="34" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"/>
+    <text x="137" y="23" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff" letter-spacing="1">INTERNSHIP</text>
+
+    <!-- Attributes -->
+    <rect x="12" y="46" width="30" height="18" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+    <text x="27" y="59" text-anchor="middle" font-size="11" font-weight="800" fill="#111827">PK</text>
+    <text x="52" y="60" font-size="13" font-weight="700" fill="#111827">internship_id</text>
+
+    <rect x="12" y="70" width="30" height="18" rx="2" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+    <text x="27" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">FK</text>
+    <text x="52" y="84" font-size="13" font-weight="700" fill="#111827">user_id</text>
+
+    <text x="52" y="107" font-size="12.5" fill="#1f2937">company</text>
+    <text x="52" y="127" font-size="12.5" fill="#1f2937">role</text>
+    <text x="52" y="147" font-size="12.5" fill="#1f2937">date</text>
+    <text x="52" y="167" font-size="12.5" fill="#1f2937">status (Applied/Interview/...)</text>
+    <text x="52" y="187" font-size="12.5" fill="#1f2937">location</text>
+    <text x="52" y="207" font-size="12.5" fill="#1f2937">stipend</text>
+    <text x="52" y="227" font-size="12.5" fill="#1f2937">notes</text>
+  </g>
+
+  <!-- Entity 3: DASHBOARD_STATS (Bottom Center) -->
+  <g transform="translate(440, 435)" filter="url(#shadow-gser)">
+    <rect x="0" y="0" width="260" height="185" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="260" height="34" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"/>
+    <text x="130" y="23" text-anchor="middle" font-size="14.5" font-weight="800" fill="#ffffff" letter-spacing="1">DASHBOARD_STATS</text>
+
+    <rect x="12" y="46" width="30" height="18" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+    <text x="27" y="59" text-anchor="middle" font-size="11" font-weight="800" fill="#111827">PK</text>
+    <text x="52" y="60" font-size="13" font-weight="700" fill="#111827">stats_id</text>
+
+    <rect x="12" y="70" width="30" height="18" rx="2" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+    <text x="27" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">FK</text>
+    <text x="52" y="84" font-size="13" font-weight="700" fill="#111827">user_id</text>
+
+    <text x="52" y="110" font-size="12.5" fill="#1f2937">total_applications</text>
+    <text x="52" y="130" font-size="12.5" fill="#1f2937">interview_count</text>
+    <text x="52" y="150" font-size="12.5" fill="#1f2937">selected_count</text>
+    <text x="52" y="170" font-size="12.5" fill="#1f2937">rejected_count</text>
+  </g>
+
+  <!-- Entity 4: INTERVIEW_ROUND (Bottom Right) -->
+  <g transform="translate(805, 390)" filter="url(#shadow-gser)">
+    <rect x="0" y="0" width="275" height="225" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="275" height="34" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"/>
+    <text x="137" y="23" text-anchor="middle" font-size="14.5" font-weight="800" fill="#ffffff" letter-spacing="1">INTERVIEW_ROUND</text>
+
+    <rect x="12" y="46" width="30" height="18" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+    <text x="27" y="59" text-anchor="middle" font-size="11" font-weight="800" fill="#111827">PK</text>
+    <text x="52" y="60" font-size="13" font-weight="700" fill="#111827">round_id</text>
+
+    <rect x="12" y="70" width="30" height="18" rx="2" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+    <text x="27" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">FK</text>
+    <text x="52" y="84" font-size="13" font-weight="700" fill="#111827">internship_id</text>
+
+    <text x="52" y="108" font-size="12.5" fill="#1f2937">round_name (Tech/HR)</text>
+    <text x="52" y="128" font-size="12.5" fill="#1f2937">schedule_date</text>
+    <text x="52" y="148" font-size="12.5" fill="#1f2937">mode (Online/On-campus)</text>
+    <text x="52" y="168" font-size="12.5" fill="#1f2937">interviewer_feedback</text>
+    <text x="52" y="188" font-size="12.5" fill="#1f2937">result_status</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RELATIONSHIPS & ORTHOGONAL CONNECTORS                    -->
+  <!-- ======================================================== -->
+
+  <!-- Relationship 1: USER has INTERNSHIP (1 to M) -->
+  <line x1="440" y1="210" x2="250" y2="210" stroke="#111827" stroke-width="2"/>
+  <text x="420" y="200" font-size="14" font-weight="900" fill="#111827">1</text>
+
+  <!-- Diamond: has -->
+  <g transform="translate(160, 188)">
+    <polygon points="45,0 90,22 45,44 0,22" fill="#f9fafb" stroke="#111827" stroke-width="1.8"/>
+    <text x="45" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">has</text>
+  </g>
+
+  <!-- Drop down to INTERNSHIP -->
+  <line x1="205" y1="232" x2="205" y2="388" stroke="#111827" stroke-width="2" marker-end="url(#arrow-gser)"/>
+  <text x="218" y="380" font-size="14" font-weight="900" fill="#111827">M</text>
+
+  <!-- Relationship 2: USER computes DASHBOARD_STATS (1 to 1) -->
+  <line x1="570" y1="320" x2="570" y2="353" stroke="#111827" stroke-width="2"/>
+  <text x="582" y="338" font-size="14" font-weight="900" fill="#111827">1</text>
+
+  <!-- Diamond: computes -->
+  <g transform="translate(520, 353)">
+    <polygon points="50,0 100,22 50,44 0,22" fill="#f9fafb" stroke="#111827" stroke-width="1.8"/>
+    <text x="50" y="26" text-anchor="middle" font-size="11.5" font-weight="700" fill="#111827">computes</text>
+  </g>
+
+  <line x1="570" y1="397" x2="570" y2="433" stroke="#111827" stroke-width="2" marker-end="url(#arrow-gser)"/>
+  <text x="582" y="426" font-size="14" font-weight="900" fill="#111827">1</text>
+
+  <!-- Relationship 3: USER / INTERNSHIP schedules INTERVIEW_ROUND (1 to M) -->
+  <line x1="700" y1="210" x2="890" y2="210" stroke="#111827" stroke-width="2"/>
+  <text x="715" y="200" font-size="14" font-weight="900" fill="#111827">1</text>
+
+  <!-- Diamond: schedules -->
+  <g transform="translate(890, 188)">
+    <polygon points="50,0 100,22 50,44 0,22" fill="#f9fafb" stroke="#111827" stroke-width="1.8"/>
+    <text x="50" y="26" text-anchor="middle" font-size="11" font-weight="700" fill="#111827">schedules</text>
+  </g>
+
+  <line x1="940" y1="232" x2="940" y2="388" stroke="#111827" stroke-width="2" marker-end="url(#arrow-gser)"/>
+  <text x="952" y="380" font-size="14" font-weight="900" fill="#111827">M</text>
+
+  <!-- Bottom Legend Box -->
+  <g transform="translate(440, 640)" filter="url(#shadow-gser)">
+    <rect x="0" y="0" width="260" height="60" rx="4" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2"/>
+    <rect x="12" y="10" width="26" height="16" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+    <text x="25" y="22" text-anchor="middle" font-size="10" font-weight="800" fill="#111827">PK</text>
+    <text x="44" y="22" font-size="11" font-weight="700" fill="#111827">= Primary Key</text>
+
+    <rect x="140" y="10" width="26" height="16" rx="2" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+    <text x="153" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#374151">FK</text>
+    <text x="172" y="22" font-size="11" font-weight="700" fill="#111827">= Foreign Key</text>
+
+    <text x="35" y="47" font-size="11" font-weight="600" fill="#374151">1..M = One-to-Many</text>
+    <text x="155" y="47" font-size="11" font-weight="600" fill="#374151">1..1 = One-to-One</text>
+  </g>
+</svg>

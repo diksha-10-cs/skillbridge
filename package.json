@@ -1,0 +1,20 @@
+{
+  "name": "skillbridge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "concurrently -n \"BACKEND,FRONTEND\" -c \"cyan,magenta\" \"npm run backend\" \"npm run frontend\"",
+    "dev": "npm start",
+    "run": "npm start",
+    "backend": "node backend/server.js",
+    "backend:dev": "node --watch backend/server.js",
+    "frontend": "npm run --prefix frontend dev",
+    "build": "npm run --prefix frontend build",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "concurrently": "^9.1.2"
+  }
+}

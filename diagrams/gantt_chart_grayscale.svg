@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;">
+  <defs>
+    <!-- Crisp drop shadow for table elevation -->
+    <filter id="shadow-gantt-gs" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="600" y="44" text-anchor="middle" font-size="24" font-weight="800" fill="#111827" letter-spacing="0.5">SkillBridge – Student Internship &amp; Career Management Portal</text>
+  <text x="600" y="74" text-anchor="middle" font-size="17.5" font-weight="700" fill="#374151">Gantt Chart (16 Weeks Project Schedule) – Academic Grayscale</text>
+
+  <!-- Table Container (x: 30, y: 105, w: 1140, h: 578) -->
+  <g transform="translate(30, 105)" filter="url(#shadow-gantt-gs)">
+    <!-- Base background -->
+    <rect x="0" y="0" width="1140" height="578" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+
+    <!-- Header Background: Light Neutral Gray -->
+    <rect x="0" y="0" width="1140" height="64" fill="#f3f4f6"/>
+    
+    <!-- Dividing line between Tasks column and Weeks grid -->
+    <line x1="280" y1="0" x2="280" y2="578" stroke="#111827" stroke-width="2"/>
+
+    <!-- Header Divider between 'Weeks' and week numbers -->
+    <line x1="280" y1="32" x2="1140" y2="32" stroke="#d1d5db" stroke-width="1.5"/>
+    <!-- Bottom Header line -->
+    <line x1="0" y1="64" x2="1140" y2="64" stroke="#111827" stroke-width="2"/>
+
+    <!-- Header Texts -->
+    <text x="140" y="38" text-anchor="middle" font-size="15" font-weight="800" fill="#111827">Tasks</text>
+    <text x="710" y="22" text-anchor="middle" font-size="14.5" font-weight="800" fill="#111827">Weeks</text>
+
+    <!-- Week Numbers (Columns 1 to 16, width: 53.75px each) -->
+    <text x="306.8" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">1</text>
+    <text x="360.6" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">2</text>
+    <text x="414.3" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">3</text>
+    <text x="468.1" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">4</text>
+    <text x="521.8" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">5</text>
+    <text x="575.6" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">6</text>
+    <text x="629.3" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">7</text>
+    <text x="683.1" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">8</text>
+    <text x="736.8" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">9</text>
+    <text x="790.6" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">10</text>
+    <text x="844.3" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">11</text>
+    <text x="898.1" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">12</text>
+    <text x="951.8" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">13</text>
+    <text x="1005.6" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">14</text>
+    <text x="1059.3" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">15</text>
+    <text x="1113.1" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">16</text>
+
+    <!-- Vertical Grid Lines for Weeks (x = 280 + i * 53.75) -->
+    <line x1="333.75" y1="32" x2="333.75" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="387.50" y1="32" x2="387.50" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="441.25" y1="32" x2="441.25" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="495.00" y1="32" x2="495.00" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="548.75" y1="32" x2="548.75" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="602.50" y1="32" x2="602.50" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="656.25" y1="32" x2="656.25" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="710.00" y1="32" x2="710.00" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="763.75" y1="32" x2="763.75" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="817.50" y1="32" x2="817.50" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="871.25" y1="32" x2="871.25" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="925.00" y1="32" x2="925.00" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="978.75" y1="32" x2="978.75" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="1032.50" y1="32" x2="1032.50" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+    <line x1="1086.25" y1="32" x2="1086.25" y2="578" stroke="#e5e7eb" stroke-width="1.2"/>
+
+    <!-- Horizontal Row Dividers -->
+    <line x1="0" y1="98.26" x2="1140" y2="98.26" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="132.53" x2="1140" y2="132.53" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="166.80" x2="1140" y2="166.80" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="201.06" x2="1140" y2="201.06" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="235.33" x2="1140" y2="235.33" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="269.60" x2="1140" y2="269.60" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="303.86" x2="1140" y2="303.86" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="338.13" x2="1140" y2="338.13" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="372.40" x2="1140" y2="372.40" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="406.66" x2="1140" y2="406.66" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="440.93" x2="1140" y2="440.93" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="475.20" x2="1140" y2="475.20" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="509.46" x2="1140" y2="509.46" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="0" y1="543.73" x2="1140" y2="543.73" stroke="#e5e7eb" stroke-width="1"/>
+
+    <!-- Task Names (Left Column) -->
+    <text x="14" y="86" font-size="12.5" font-weight="600" fill="#111827">1.  Project Topic Selection</text>
+    <text x="14" y="120" font-size="12.5" font-weight="600" fill="#111827">2.  Requirement Gathering</text>
+    <text x="14" y="154" font-size="12.5" font-weight="600" fill="#111827">3.  System Analysis</text>
+    <text x="14" y="188" font-size="12.5" font-weight="600" fill="#111827">4.  UI/UX Design</text>
+    <text x="14" y="222" font-size="12.5" font-weight="600" fill="#111827">5.  Database Design</text>
+    <text x="14" y="257" font-size="12.5" font-weight="600" fill="#111827">6.  Frontend Development</text>
+    <text x="14" y="291" font-size="12.5" font-weight="600" fill="#111827">7.  Backend Development</text>
+    <text x="14" y="325" font-size="12.5" font-weight="600" fill="#111827">8.  Internship Management Module</text>
+    <text x="14" y="359" font-size="12.5" font-weight="600" fill="#111827">9.  Application Tracking Module</text>
+    <text x="14" y="394" font-size="12.5" font-weight="600" fill="#111827">10. Interview Prep &amp; Notes Module</text>
+    <text x="14" y="428" font-size="12.5" font-weight="600" fill="#111827">11. Dashboard &amp; Analytics Module</text>
+    <text x="14" y="462" font-size="12.5" font-weight="600" fill="#111827">12. Integration</text>
+    <text x="14" y="496" font-size="12.5" font-weight="600" fill="#111827">13. Testing and Debugging</text>
+    <text x="14" y="530" font-size="12.5" font-weight="600" fill="#111827">14. Documentation</text>
+    <text x="14" y="565" font-size="12.5" font-weight="600" fill="#111827">15. Final Presentation</text>
+
+    <!-- ======================================================== -->
+    <!-- GANTT SCHEDULE BARS (Academic Grayscale Shading)          -->
+    <!-- ======================================================== -->
+
+    <!-- Task 1: Week 1 -->
+    <rect x="284" y="71" width="46" height="20" rx="3" fill="#1f2937"/>
+
+    <!-- Task 2: Weeks 1 to 2 -->
+    <rect x="284" y="105" width="100" height="20" rx="3" fill="#374151"/>
+
+    <!-- Task 3: Weeks 2 to 3 -->
+    <rect x="338" y="139" width="100" height="20" rx="3" fill="#374151"/>
+
+    <!-- Task 4: Weeks 3 to 4 -->
+    <rect x="391.5" y="174" width="100" height="20" rx="3" fill="#4b5563"/>
+
+    <!-- Task 5: Weeks 4 to 5 -->
+    <rect x="445" y="208" width="100" height="20" rx="3" fill="#374151"/>
+
+    <!-- Task 6: Weeks 4 to 7 -->
+    <rect x="445" y="242" width="207" height="20" rx="3" fill="#6b7280"/>
+
+    <!-- Task 7: Weeks 5 to 8 -->
+    <rect x="499" y="276" width="207" height="20" rx="3" fill="#1f2937"/>
+
+    <!-- Task 8: Weeks 6 to 8 -->
+    <rect x="552.5" y="311" width="153.5" height="20" rx="3" fill="#4b5563"/>
+
+    <!-- Task 9: Weeks 7 to 9 -->
+    <rect x="606" y="345" width="154" height="20" rx="3" fill="#374151"/>
+
+    <!-- Task 10: Weeks 8 to 10 -->
+    <rect x="660" y="379" width="154" height="20" rx="3" fill="#4b5563"/>
+
+    <!-- Task 11: Weeks 9 to 11 -->
+    <rect x="714" y="413" width="153" height="20" rx="3" fill="#374151"/>
+
+    <!-- Task 12: Weeks 11 to 13 -->
+    <rect x="821" y="448" width="154" height="20" rx="3" fill="#6b7280"/>
+
+    <!-- Task 13: Weeks 12 to 14 -->
+    <rect x="875" y="482" width="154" height="20" rx="3" fill="#374151"/>
+
+    <!-- Task 14: Weeks 13 to 16 -->
+    <rect x="929" y="516" width="207" height="20" rx="3" fill="#4b5563"/>
+
+    <!-- Task 15: Week 16 -->
+    <rect x="1090" y="550" width="46" height="20" rx="3" fill="#1f2937"/>
+  </g>
+</svg>

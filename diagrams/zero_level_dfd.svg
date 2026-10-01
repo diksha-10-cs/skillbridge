@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 720" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;">
+  <defs>
+    <marker id="arrow-gs0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#111827"/>
+    </marker>
+    <filter id="shadow-gs0" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="575" y="40" text-anchor="middle" font-size="24" font-weight="800" fill="#111827" letter-spacing="0.5">SkillBridge – Student Internship &amp; Career Management Portal</text>
+  <text x="575" y="66" text-anchor="middle" font-size="16.5" font-weight="700" fill="#374151">Zero Level Data Flow Diagram (Context Level DFD) – Grayscale</text>
+
+  <!-- External Entity: Student (Left Side) -->
+  <g transform="translate(50, 150)" filter="url(#shadow-gs0)">
+    <rect x="0" y="0" width="170" height="300" rx="4" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+    <rect x="0" y="0" width="170" height="32" rx="4" fill="#f3f4f6" stroke="#111827" stroke-width="1.2"/>
+    <text x="85" y="21" text-anchor="middle" font-size="12" font-weight="700" fill="#4b5563" letter-spacing="1">EXTERNAL ENTITY</text>
+    <text x="85" y="150" text-anchor="middle" font-size="22" font-weight="800" fill="#111827">STUDENT</text>
+    <text x="85" y="175" text-anchor="middle" font-size="12.5" font-weight="600" fill="#4b5563">(Job / Internship Seeker)</text>
+  </g>
+
+  <!-- Central System: 0 SKILLBRIDGE SYSTEM (Right Side) -->
+  <g transform="translate(820, 300)" filter="url(#shadow-gs0)">
+    <circle cx="0" cy="0" r="130" fill="#f9fafb" stroke="#111827" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="122" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="0" y="-55" text-anchor="middle" font-size="26" font-weight="900" fill="#111827">0</text>
+    <text x="0" y="-22" text-anchor="middle" font-size="17" font-weight="800" fill="#111827">SKILLBRIDGE</text>
+    <text x="0" y="2" text-anchor="middle" font-size="15" font-weight="800" fill="#111827">INTERNSHIP &amp; PLACEMENT</text>
+    <text x="0" y="24" text-anchor="middle" font-size="15" font-weight="800" fill="#111827">TRACKER SYSTEM</text>
+    <line x1="-60" y1="40" x2="60" y2="40" stroke="#9ca3af" stroke-width="1"/>
+    <text x="0" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4b5563">Context Level Process</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- INPUT FLOWS: Student -> System (Straight Horizontal)     -->
+  <!-- Ending with mathematical precision on circle perimeter   -->
+  <!-- ======================================================== -->
+
+  <!-- Flow 1: Registration / Login -->
+  <line x1="220" y1="175" x2="780" y2="175" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="365" y="164" width="270" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">1. Registration / Login Credentials</text>
+
+  <!-- Flow 2: Internship Details -->
+  <line x1="220" y1="210" x2="724" y2="210" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="345" y="199" width="310" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="213" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">2. Internship Details (Company, Role, Stipend)</text>
+
+  <!-- Flow 3: Profile Updates -->
+  <line x1="220" y1="245" x2="700" y2="245" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="355" y="234" width="290" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">3. Profile &amp; Technical Skills Updates</text>
+
+  <!-- Flow 4: Status Updates -->
+  <line x1="220" y1="280" x2="690" y2="280" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="365" y="269" width="270" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">4. Application Status Updates &amp; Notes</text>
+
+  <!-- ======================================================== -->
+  <!-- OUTPUT FLOWS: System -> Student (Straight Horizontal)    -->
+  <!-- Starting from circle perimeter and landing on Student    -->
+  <!-- ======================================================== -->
+
+  <!-- Flow 5: Auth Token & Session State -->
+  <line x1="692" y1="320" x2="223" y2="320" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="355" y="309" width="290" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="323" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">5. Auth Token &amp; Active User Session State</text>
+
+  <!-- Flow 6: Live Dashboard Stats -->
+  <line x1="702" y1="355" x2="223" y2="355" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="340" y="344" width="320" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="358" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">6. Real-time KPI Stats (Applied, Interview, Selected)</text>
+
+  <!-- Flow 7: Application Pipeline -->
+  <line x1="726" y1="390" x2="223" y2="390" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="360" y="379" width="280" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="393" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">7. Application Pipeline &amp; Listing Cards</text>
+
+  <!-- Flow 8: Profile Records & Reports -->
+  <line x1="782" y1="425" x2="223" y2="425" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+  <rect x="360" y="414" width="280" height="20" fill="#ffffff" rx="3"/>
+  <text x="500" y="428" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">8. Profile Records &amp; Placement Reports</text>
+
+  <!-- ======================================================== -->
+  <!-- BOTTOM SECTION: Key Points & Academic Legend             -->
+  <!-- ======================================================== -->
+  <g transform="translate(50, 565)" filter="url(#shadow-gs0)">
+    <rect x="0" y="0" width="705" height="125" rx="4" fill="#ffffff" stroke="#111827" stroke-width="1.5"/>
+    <rect x="0" y="0" width="705" height="26" rx="4" fill="#f3f4f6" stroke="#111827" stroke-width="1"/>
+    <text x="15" y="18" font-size="12.5" font-weight="800" fill="#111827">Context Level Flows (Key Points):</text>
+
+    <text x="15" y="48" font-size="11" font-weight="600" fill="#1f2937">1. STUDENT → Registration / Login Credentials → SYSTEM</text>
+    <text x="15" y="68" font-size="11" font-weight="600" fill="#1f2937">2. STUDENT → Add / Edit / Delete Internship Record → SYSTEM</text>
+    <text x="15" y="88" font-size="11" font-weight="600" fill="#1f2937">3. STUDENT → Update Technical Skills &amp; Profile → SYSTEM</text>
+    <text x="15" y="108" font-size="11" font-weight="600" fill="#1f2937">4. STUDENT → Filter / Search Applications &amp; Notes → SYSTEM</text>
+
+    <text x="375" y="48" font-size="11" font-weight="600" fill="#1f2937">5. SYSTEM → Authentication Token &amp; User State → STUDENT</text>
+    <text x="375" y="68" font-size="11" font-weight="600" fill="#1f2937">6. SYSTEM → Live KPI Stats (Total, Interview, Selected) → STUDENT</text>
+    <text x="375" y="88" font-size="11" font-weight="600" fill="#1f2937">7. SYSTEM → Application Cards Pipeline → STUDENT</text>
+    <text x="375" y="108" font-size="11" font-weight="600" fill="#1f2937">8. SYSTEM → Profile Summary &amp; Analytics Reports → STUDENT</text>
+  </g>
+
+  <!-- Legend Box -->
+  <g transform="translate(775, 565)" filter="url(#shadow-gs0)">
+    <rect x="0" y="0" width="325" height="125" rx="4" fill="#ffffff" stroke="#111827" stroke-width="1.5"/>
+    <rect x="0" y="0" width="325" height="26" rx="4" fill="#f3f4f6" stroke="#111827" stroke-width="1"/>
+    <text x="15" y="18" font-size="12.5" font-weight="800" fill="#111827">Legend:</text>
+
+    <!-- Entity -->
+    <rect x="25" y="42" width="22" height="15" rx="2" fill="#ffffff" stroke="#111827" stroke-width="1.5"/>
+    <text x="58" y="54" font-size="11.5" font-weight="600" fill="#1f2937">= External Entity</text>
+
+    <!-- Process -->
+    <circle cx="36" cy="82" r="10" fill="#ffffff" stroke="#111827" stroke-width="1.5"/>
+    <text x="58" y="86" font-size="11.5" font-weight="600" fill="#1f2937">= Main Context Process</text>
+
+    <!-- Flow -->
+    <line x1="175" y1="62" x2="215" y2="62" stroke="#111827" stroke-width="1.8" marker-end="url(#arrow-gs0)"/>
+    <text x="225" y="66" font-size="11.5" font-weight="600" fill="#1f2937">= Data Flow</text>
+  </g>
+</svg>

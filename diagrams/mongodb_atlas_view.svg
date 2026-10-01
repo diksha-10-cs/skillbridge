@@ -1,0 +1,365 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" style="background:#f7faf9; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Crisp shadow for cards -->
+    <filter id="card-shadow" x="-1%" y="-1%" width="102%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#001e2b" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- ======================================================== -->
+  <!-- TOP NAVIGATION BAR (Height: 46px, Dark/Light Atlas Theme) -->
+  <!-- ======================================================== -->
+  <rect x="0" y="0" width="1600" height="46" fill="#ffffff" stroke="#e8edeb" stroke-width="1"/>
+
+  <!-- MongoDB Leaf Logo -->
+  <g transform="translate(18, 11)">
+    <!-- Leaf Icon -->
+    <path d="M12 0 C12 0, 4 7, 4 14 C4 18.5 7.5 22 12 24 C16.5 22 20 18.5 20 14 C20 7, 12 0, 12 0 Z" fill="#00ed64"/>
+    <path d="M12 0 C12 0, 12 18, 12 24 C16.5 22 20 18.5 20 14 C20 7, 12 0, 12 0 Z" fill="#00684a"/>
+    <path d="M11.5 2 C11.5 2, 11.5 22, 12 24 C12.2 22, 12.2 2, 11.5 2 Z" fill="#ffffff" opacity="0.4"/>
+    <!-- Logo Text -->
+    <text x="28" y="18" font-size="18" font-weight="700" fill="#001e2b" letter-spacing="-0.3">Atlas</text>
+  </g>
+
+  <!-- Org Dropdown Badge -->
+  <g transform="translate(125, 8)">
+    <rect x="0" y="0" width="165" height="30" rx="4" fill="#f0f4f2" stroke="#d3ded9" stroke-width="1"/>
+    <!-- Small Org Icon -->
+    <path d="M8 8 L16 8 L16 22 L8 22 Z M10 11 L14 11 M10 14 L14 14 M10 17 L14 17" fill="none" stroke="#4a5568" stroke-width="1.2"/>
+    <text x="24" y="20" font-size="13" font-weight="600" fill="#001e2b">SkillBridge Org</text>
+    <!-- Down Arrow -->
+    <path d="M135 13 L139 17 L143 13" fill="none" stroke="#4a5568" stroke-width="1.5"/>
+    <!-- Small Close X -->
+    <circle cx="152" cy="15" r="6" fill="#cbd5e1"/>
+    <path d="M150 13 L154 17 M154 13 L150 17" stroke="#ffffff" stroke-width="1.2"/>
+  </g>
+
+  <!-- Access Manager & Billing Links -->
+  <text x="310" y="28" font-size="13" font-weight="500" fill="#4a5568">Access Manager ▾</text>
+  <text x="445" y="28" font-size="13" font-weight="500" fill="#4a5568">Billing</text>
+
+  <!-- Top Right Nav Links -->
+  <g transform="translate(1200, 0)">
+    <text x="50" y="28" font-size="13" font-weight="500" fill="#4a5568">All Clusters</text>
+    <text x="145" y="28" font-size="13" font-weight="500" fill="#4a5568">Get Help ▾</text>
+    
+    <!-- User Profile: Harshad -->
+    <g transform="translate(230, 8)">
+      <circle cx="15" cy="15" r="14" fill="#e2e8f0"/>
+      <!-- User silhouette -->
+      <circle cx="15" cy="11" r="5" fill="#4a5568"/>
+      <path d="M8 23 C8 18, 22 18, 22 23" fill="#4a5568"/>
+      <text x="36" y="20" font-size="13.5" font-weight="600" fill="#001e2b">Harshad ▾</text>
+    </g>
+
+    <!-- Bell Icon -->
+    <g transform="translate(365, 14)">
+      <path d="M7 3 C7 2, 9 2, 9 3 L9 4 C12 5, 13 8, 13 11 L14 13 L2 13 L3 11 C3 8, 4 5, 7 4 Z M6 14 C6 15, 10 15, 10 14" fill="none" stroke="#4a5568" stroke-width="1.4"/>
+      <circle cx="12" cy="4" r="3.5" fill="#ef4444"/>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- SUB-HEADER BAR (Project 0 & Services / Charts Tabs)       -->
+  <!-- ======================================================== -->
+  <rect x="0" y="46" width="1600" height="42" fill="#ffffff" stroke="#e8edeb" stroke-width="1"/>
+
+  <!-- Project 0 Dropdown -->
+  <g transform="translate(18, 56)">
+    <!-- Folder Icon -->
+    <path d="M2 4 L7 4 L9 7 L16 7 L16 16 L2 16 Z" fill="none" stroke="#4a5568" stroke-width="1.3"/>
+    <text x="24" y="15" font-size="13.5" font-weight="600" fill="#001e2b">Project 0 ▾</text>
+    <!-- Three vertical dots -->
+    <circle cx="120" cy="11" r="1.5" fill="#718096"/>
+    <circle cx="120" cy="6" r="1.5" fill="#718096"/>
+    <circle cx="120" cy="16" r="1.5" fill="#718096"/>
+  </g>
+
+  <!-- Service Tabs: Data Services & Charts -->
+  <g transform="translate(165, 46)">
+    <!-- Data Services (Active) -->
+    <rect x="0" y="0" width="115" height="42" fill="#ffffff"/>
+    <text x="15" y="26" font-size="13.5" font-weight="700" fill="#00684a">Data Services</text>
+    <rect x="15" y="39" width="85" height="3" fill="#00684a" rx="1.5"/>
+
+    <!-- Charts Tab -->
+    <text x="135" y="26" font-size="13.5" font-weight="500" fill="#64748b">Charts</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- CLUSTER TITLE BAR & AWS MUMBAI REGION                   -->
+  <!-- ======================================================== -->
+  <rect x="0" y="88" width="1600" height="56" fill="#ffffff"/>
+  
+  <g transform="translate(180, 100)">
+    <!-- MongoDB Cluster Icon (3 interconnected circles) -->
+    <circle cx="10" cy="10" r="5" fill="#00684a"/>
+    <circle cx="20" cy="22" r="5" fill="#00684a"/>
+    <circle cx="4" cy="22" r="5" fill="#00684a"/>
+    <line x1="10" y1="10" x2="20" y2="22" stroke="#00684a" stroke-width="2"/>
+    <line x1="10" y1="10" x2="4" y2="22" stroke="#00684a" stroke-width="2"/>
+    <line x1="4" y1="22" x2="20" y2="22" stroke="#00684a" stroke-width="2"/>
+
+    <!-- Cluster Name -->
+    <text x="36" y="23" font-size="24" font-weight="700" fill="#001e2b">SkillBridgeCluster</text>
+  </g>
+
+  <!-- Cluster Meta Stats (Right Side) -->
+  <g transform="translate(1220, 110)">
+    <text x="0" y="16" font-size="13" font-weight="600" fill="#4a5568">VERSION</text>
+    <text x="0" y="32" font-size="14" font-weight="700" fill="#001e2b">8.0.14</text>
+
+    <text x="100" y="16" font-size="13" font-weight="600" fill="#4a5568">REGION</text>
+    <text x="100" y="32" font-size="14" font-weight="700" fill="#001e2b">AWS Mumbai (ap-south-1)</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- CLUSTER NAVIGATION TABS (Collections Active)             -->
+  <!-- ======================================================== -->
+  <rect x="0" y="144" width="1600" height="42" fill="#ffffff" stroke="#e8edeb" stroke-width="1"/>
+  
+  <g transform="translate(180, 144)">
+    <text x="15" y="27" font-size="13.5" font-weight="500" fill="#64748b">Overview</text>
+    <text x="110" y="27" font-size="13.5" font-weight="500" fill="#64748b">Real Time</text>
+    <text x="210" y="27" font-size="13.5" font-weight="500" fill="#64748b">Metrics</text>
+
+    <!-- Collections Tab (ACTIVE) -->
+    <text x="300" y="27" font-size="14" font-weight="700" fill="#001e2b">Collections</text>
+    <rect x="295" y="39" width="85" height="3" fill="#00684a" rx="1.5"/>
+
+    <text x="420" y="27" font-size="13.5" font-weight="500" fill="#64748b">Atlas Search</text>
+    <text x="540" y="27" font-size="13.5" font-weight="500" fill="#64748b">Query Insights</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- MAIN WORKSPACE: LEFT SIDEBAR (Width: 165px)              -->
+  <!-- ======================================================== -->
+  <g transform="translate(0, 144)">
+    <!-- Sidebar background -->
+    <rect x="0" y="0" width="165" height="756" fill="#ffffff" stroke="#e8edeb" stroke-width="1"/>
+
+    <!-- OVERVIEW -->
+    <text x="18" y="32" font-size="11" font-weight="800" fill="#718096" letter-spacing="0.5">OVERVIEW</text>
+
+    <!-- DATABASE Section -->
+    <text x="18" y="70" font-size="11" font-weight="800" fill="#718096" letter-spacing="0.5">DATABASE</text>
+    
+    <!-- Clusters Item (Active Selected) -->
+    <rect x="0" y="85" width="165" height="36" fill="#e8f5e9"/>
+    <rect x="0" y="85" width="4" height="36" fill="#00684a"/>
+    <!-- Database disk icon -->
+    <path d="M22 97 C22 94, 34 94, 34 97 C34 100, 22 100, 22 97 Z M22 100 C22 103, 34 103, 34 100 M22 103 C22 106, 34 106, 34 103" fill="none" stroke="#00684a" stroke-width="1.4"/>
+    <text x="42" y="108" font-size="13.5" font-weight="700" fill="#00684a">Clusters</text>
+
+    <!-- SERVICES Section -->
+    <text x="18" y="152" font-size="11" font-weight="800" fill="#718096" letter-spacing="0.5">SERVICES</text>
+    <text x="18" y="180" font-size="13" font-weight="500" fill="#4a5568">Atlas Search</text>
+    <text x="18" y="210" font-size="13" font-weight="500" fill="#4a5568">Stream Processing</text>
+    <text x="18" y="240" font-size="13" font-weight="500" fill="#4a5568">Triggers</text>
+    <text x="18" y="270" font-size="13" font-weight="500" fill="#4a5568">Migration</text>
+    <text x="18" y="300" font-size="13" font-weight="500" fill="#4a5568">Data Federation</text>
+
+    <!-- SECURITY Section -->
+    <g transform="translate(18, 335)">
+      <!-- Lock icon -->
+      <path d="M2 6 L2 4 C2 2, 6 2, 6 4 L6 6 M0 6 L8 6 L8 12 L0 12 Z" fill="none" stroke="#718096" stroke-width="1.2"/>
+      <text x="16" y="10" font-size="11" font-weight="800" fill="#718096" letter-spacing="0.5">SECURITY</text>
+    </g>
+    <text x="18" y="375" font-size="13" font-weight="500" fill="#4a5568">Quickstart</text>
+    <text x="18" y="405" font-size="13" font-weight="500" fill="#4a5568">Backup</text>
+    <text x="18" y="435" font-size="13" font-weight="500" fill="#4a5568">Database Access</text>
+    <text x="18" y="465" font-size="13" font-weight="500" fill="#4a5568">Network Access</text>
+    <text x="18" y="495" font-size="13" font-weight="500" fill="#4a5568">Advanced</text>
+
+    <!-- Collapse circle button at bottom -->
+    <circle cx="150" cy="710" r="14" fill="#ffffff" stroke="#d3ded9" stroke-width="1"/>
+    <path d="M152 706 L147 710 L152 714" fill="none" stroke="#4a5568" stroke-width="1.5"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- MAIN WORKSPACE: COLLECTIONS EXPLORER                     -->
+  <!-- ======================================================== -->
+
+  <!-- Top Metadata Bar above tree & data views -->
+  <g transform="translate(185, 195)">
+    <text x="0" y="16" font-size="12" font-weight="700" fill="#64748b" letter-spacing="0.5">DATABASES: 1   COLLECTIONS: 4</text>
+    
+    <!-- Right action controls -->
+    <g transform="translate(860, 0)">
+      <!-- Preview toggle -->
+      <rect x="0" y="0" width="55" height="20" rx="3" fill="#e0f2fe"/>
+      <text x="8" y="14" font-size="10" font-weight="800" fill="#0284c7">PREVIEW</text>
+      <text x="64" y="15" font-size="12" font-weight="600" fill="#1e293b">New Data Explorer</text>
+      <!-- Switch toggle (ON) -->
+      <rect x="180" y="2" width="34" height="18" rx="9" fill="#00684a"/>
+      <circle cx="205" cy="11" r="7" fill="#ffffff"/>
+
+      <!-- Visualize Your Data Button -->
+      <g transform="translate(230, -5)">
+        <rect x="0" y="0" width="155" height="30" rx="4" fill="#ffffff" stroke="#d3ded9" stroke-width="1.2"/>
+        <text x="12" y="20" font-size="12" font-weight="700" fill="#001e2b">⚗ VISUALIZE YOUR DATA</text>
+      </g>
+
+      <!-- Refresh Button -->
+      <g transform="translate(395, -5)">
+        <rect x="0" y="0" width="95" height="30" rx="4" fill="#ffffff" stroke="#d3ded9" stroke-width="1.2"/>
+        <text x="12" y="20" font-size="12" font-weight="700" fill="#001e2b">↻ REFRESH</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LEFT COLUMN: DATABASES & COLLECTIONS TREE (Width: 235px) -->
+  <!-- ======================================================== -->
+  <g transform="translate(185, 235)">
+    <!-- Create Database Button -->
+    <rect x="0" y="0" width="235" height="34" rx="4" fill="#ffffff" stroke="#d3ded9" stroke-width="1.2"/>
+    <text x="117" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#001e2b">+ Create Database</text>
+
+    <!-- Search Namespaces input -->
+    <g transform="translate(0, 44)">
+      <rect x="0" y="0" width="235" height="34" rx="4" fill="#ffffff" stroke="#d3ded9" stroke-width="1.2"/>
+      <text x="12" y="22" font-size="13" fill="#94a3b8">🔍 Search Namespaces</text>
+    </g>
+
+    <!-- Tree Structure -->
+    <g transform="translate(0, 95)">
+      <!-- Database: skillbridge (expanded) -->
+      <path d="M4 8 L8 12 L12 8" fill="none" stroke="#4a5568" stroke-width="1.5"/>
+      <text x="18" y="12" font-size="14" font-weight="700" fill="#001e2b">skillbridge</text>
+
+      <!-- Collection 1: internships (SELECTED) -->
+      <g transform="translate(16, 26)">
+        <rect x="0" y="0" width="219" height="34" rx="4" fill="#e8f5e9"/>
+        <text x="16" y="22" font-size="13.5" font-weight="700" fill="#00684a">internships</text>
+      </g>
+
+      <!-- Collection 2: users -->
+      <text x="32" y="85" font-size="13.5" font-weight="500" fill="#4a5568">users</text>
+
+      <!-- Collection 3: dashboard_stats -->
+      <text x="32" y="115" font-size="13.5" font-weight="500" fill="#4a5568">dashboard_stats</text>
+
+      <!-- Collection 4: interview_notes -->
+      <text x="32" y="145" font-size="13.5" font-weight="500" fill="#4a5568">interview_notes</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RIGHT COLUMN: COLLECTION DATA EXPLORER & DOCUMENTS      -->
+  <!-- ======================================================== -->
+  <g transform="translate(440, 235)">
+    <!-- Main Collection Header -->
+    <text x="0" y="22" font-size="22" font-weight="800" fill="#001e2b">skillbridge.internships</text>
+
+    <!-- Storage & Document Metadata -->
+    <g transform="translate(0, 38)">
+      <text x="0" y="0" font-size="11.5" font-weight="700" fill="#64748b" letter-spacing="0.3">
+        STORAGE SIZE: <tspan font-weight="800" fill="#001e2b">48KB</tspan>    
+        LOGICAL DATA SIZE: <tspan font-weight="800" fill="#001e2b">3.2KB</tspan>    
+        TOTAL DOCUMENTS: <tspan font-weight="800" fill="#001e2b">4</tspan>    
+        INDEXES TOTAL SIZE: <tspan font-weight="800" fill="#001e2b">36KB</tspan>
+      </text>
+    </g>
+
+    <!-- Action Tabs: Find, Indexes, Schema Anti-Patterns, Aggregation -->
+    <g transform="translate(0, 60)">
+      <text x="0" y="16" font-size="14" font-weight="700" fill="#00684a">Find</text>
+      <line x1="0" y1="24" x2="30" y2="24" stroke="#00684a" stroke-width="2.5"/>
+
+      <text x="65" y="16" font-size="13.5" font-weight="500" fill="#4a5568">Indexes</text>
+      
+      <text x="145" y="16" font-size="13.5" font-weight="500" fill="#4a5568">Schema Anti-Patterns</text>
+      <circle cx="295" cy="12" r="7" fill="#cbd5e1"/>
+      <path d="M292 12 L298 12 M295 9 L295 15" stroke="#ffffff" stroke-width="1.2"/>
+
+      <text x="325" y="16" font-size="13.5" font-weight="500" fill="#4a5568">Aggregation</text>
+      <text x="430" y="16" font-size="13.5" font-weight="500" fill="#4a5568">Search Indexes</text>
+
+      <!-- INSERT DOCUMENT Button -->
+      <g transform="translate(850, -4)">
+        <rect x="0" y="0" width="165" height="30" rx="4" fill="#ffffff" stroke="#00684a" stroke-width="1.5"/>
+        <text x="82" y="20" text-anchor="middle" font-size="12" font-weight="800" fill="#00684a">INSERT DOCUMENT</text>
+      </g>
+    </g>
+
+    <!-- Query Filter Bar -->
+    <g transform="translate(0, 95)">
+      <rect x="0" y="0" width="1015" height="42" rx="4" fill="#ffffff" stroke="#d3ded9" stroke-width="1"/>
+      
+      <text x="14" y="26" font-size="13" font-weight="600" fill="#0284c7">Filter ⎘</text>
+      <line x1="68" y1="8" x2="68" y2="34" stroke="#e2e8f0" stroke-width="1"/>
+
+      <!-- Filter Placeholder -->
+      <text x="85" y="26" font-size="13" font-family="monospace" fill="#94a3b8">Type a query: { field: 'value' }</text>
+
+      <!-- Filter Buttons (Right) -->
+      <g transform="translate(805, 6)">
+        <rect x="0" y="0" width="60" height="30" rx="4" fill="#f1f5f9"/>
+        <text x="30" y="20" text-anchor="middle" font-size="12.5" font-weight="600" fill="#475569">Reset</text>
+
+        <!-- Apply Button (Solid Green) -->
+        <rect x="68" y="0" width="68" height="30" rx="4" fill="#00684a"/>
+        <text x="102" y="20" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">Apply</text>
+
+        <text x="150" y="20" font-size="12.5" font-weight="600" fill="#0284c7">Options ▶</text>
+      </g>
+    </g>
+
+    <!-- Query Results Counter -->
+    <text x="0" y="162" font-size="12" font-weight="700" fill="#64748b" letter-spacing="0.5">QUERY RESULTS: 1-4 OF 4</text>
+
+    <!-- ======================================================== -->
+    <!-- DOCUMENTS CONTAINER (JSON Code Editor Look & Feel)       -->
+    <!-- ======================================================== -->
+    <g transform="translate(0, 175)">
+      <rect x="0" y="0" width="1015" height="465" rx="4" fill="#ffffff" stroke="#d3ded9" stroke-width="1" filter="url(#card-shadow)"/>
+
+      <!-- ================= DOCUMENT 1: Google ================= -->
+      <g transform="translate(20, 24)" font-family="Consolas, 'Fira Code', 'Courier New', monospace" font-size="12.5">
+        <text x="0" y="0" fill="#1c2d38">{</text>
+        <text x="24" y="20" font-weight="600" fill="#800000">"_id"<tspan fill="#1c2d38">: </tspan><tspan fill="#111827">ObjectId(</tspan><tspan fill="#00684a">"66f8a120c4e18b001a9f3b11"</tspan><tspan fill="#111827">)</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="40" font-weight="600" fill="#800000">"user"<tspan fill="#1c2d38">: </tspan><tspan fill="#111827">ObjectId(</tspan><tspan fill="#00684a">"66f8a09bc4e18b001a9f3b01"</tspan><tspan fill="#111827">)</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="60" font-weight="600" fill="#800000">"company"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Google"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="80" font-weight="600" fill="#800000">"role"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Software Engineering Intern"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="100" font-weight="600" fill="#800000">"date"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"2026-06-15"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="120" font-weight="600" fill="#800000">"status"<tspan fill="#1c2d38">: </tspan><tspan fill="#0284c7" font-weight="700">"Interview"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="140" font-weight="600" fill="#800000">"location"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Bengaluru / Hybrid"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="160" font-weight="600" fill="#800000">"stipend"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"₹1,20,000 / month"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="180" font-weight="600" fill="#800000">"notes"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Completed Technical Round 1 (DSA &amp; System Design). Next: Hiring Manager round."</tspan></text>
+        <text x="0" y="200" fill="#1c2d38">}</text>
+      </g>
+
+      <!-- Divider line between docs -->
+      <line x1="20" y1="238" x2="995" y2="238" stroke="#f1f5f9" stroke-width="1.5"/>
+
+      <!-- ================= DOCUMENT 2: Microsoft ============== -->
+      <g transform="translate(20, 260)" font-family="Consolas, 'Fira Code', 'Courier New', monospace" font-size="12.5">
+        <text x="0" y="0" fill="#1c2d38">{</text>
+        <text x="24" y="20" font-weight="600" fill="#800000">"_id"<tspan fill="#1c2d38">: </tspan><tspan fill="#111827">ObjectId(</tspan><tspan fill="#00684a">"66f8a120c4e18b001a9f3b12"</tspan><tspan fill="#111827">)</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="40" font-weight="600" fill="#800000">"user"<tspan fill="#1c2d38">: </tspan><tspan fill="#111827">ObjectId(</tspan><tspan fill="#00684a">"66f8a09bc4e18b001a9f3b01"</tspan><tspan fill="#111827">)</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="60" font-weight="600" fill="#800000">"company"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Microsoft"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="80" font-weight="600" fill="#800000">"role"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Cloud Solutions Intern"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="100" font-weight="600" fill="#800000">"date"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"2026-07-01"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="120" font-weight="600" fill="#800000">"status"<tspan fill="#1c2d38">: </tspan><tspan fill="#16a34a" font-weight="700">"Selected"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="140" font-weight="600" fill="#800000">"location"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Hyderabad / On-site"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="160" font-weight="600" fill="#800000">"stipend"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"₹95,000 / month"</tspan><tspan fill="#1c2d38">,</tspan></text>
+        <text x="24" y="180" font-weight="600" fill="#800000">"notes"<tspan fill="#1c2d38">: </tspan><tspan fill="#00684a">"Offer letter received and accepted! Background verification in progress."</tspan></text>
+        <text x="0" y="200" fill="#1c2d38">}</text>
+      </g>
+
+      <!-- Scrollbar track (Right Side) -->
+      <rect x="1000" y="8" width="6" height="448" rx="3" fill="#f1f5f9"/>
+      <rect x="1000" y="16" width="6" height="120" rx="3" fill="#cbd5e1"/>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- FLOATING CHAT / HELP BUTTON (Bottom Right)               -->
+  <!-- ======================================================== -->
+  <g transform="translate(1530, 830)">
+    <circle cx="24" cy="24" r="24" fill="#00684a" filter="url(#card-shadow)"/>
+    <!-- Chat Icon -->
+    <path d="M16 16 L32 16 C33 16, 34 17, 34 18 L34 26 C34 27, 33 28, 32 28 L20 28 L15 32 L15 18 C15 17, 16 16, 16 16 Z M20 21 L28 21 M20 24 L25 24" fill="#ffffff"/>
+  </g>
+</svg>
