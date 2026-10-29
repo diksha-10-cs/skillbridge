@@ -24,8 +24,11 @@ console.log("MONGO_URI loaded:", Boolean(activeMongoUri?.startsWith("mongodb+srv
 const app = express()
 const PORT = process.env.PORT || 5000
 
-// Connect to MongoDB
-connectDB()
+// Connect to MongoDB (warmup in background)
+connectDB().catch((err) => {
+  const safe = err.message ? err.message.replace(/\/\/[^:]+:[^@]+@/g, '//***:***@') : 'Initial connection notice'
+  console.warn('Initial DB connection notice:', safe)
+})
 
 // Enable CORS
 const allowedOrigin = process.env.CLIENT_URL || 'http://localhost:5173'
@@ -42,14 +45,32 @@ app.use(
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// Health Check API
+// Health Check API (doesn't require DB connection)
 app.get(['/api/health', '/health'], (req, res) => {
   res.json({
     status: 'OK',
     app: 'SkillBridge API Server',
     version: '1.0.0',
+    database: activeMongoUri ? 'configured' : 'missing',
     timestamp: new Date().toISOString(),
   })
+})
+
+// Database connection middleware: ensures MongoDB Atlas is connected before executing any database routes
+app.use(async (req, res, next) => {
+  try {
+    await connectDB()
+    next()
+  } catch (error) {
+    const safeMsg = error.message
+      ? error.message.replace(/\/\/[^:]+:[^@]+@/g, '//***:***@')
+      : 'Database connection failed'
+    console.error(`❌ Request aborted due to DB connection failure: ${safeMsg}`)
+    return res.status(500).json({
+      success: false,
+      message: 'Database connection failed. Please ensure MongoDB Atlas is accessible (0.0.0.0/0) and credentials are valid.',
+    })
+  }
 })
 
 // Mount API Routes (supports both /api/* and serverless stripped /* paths)
