@@ -119,6 +119,11 @@
   cursor: not-allowed;
 }
 
+.form-group input:read-only:not(:disabled),
+.form-group textarea:read-only:not(:disabled) {
+  cursor: pointer;
+}
+
 .auth-error {
   background: var(--danger-bg, #fef2f2);
   border: 1.5px solid var(--danger-text, #fecaca);

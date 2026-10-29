@@ -75,6 +75,18 @@ export const api = {
         method: 'DELETE',
       }),
   },
+
+  // Admin API
+  admin: {
+    getStats: () => request('/admin/stats'),
+    getStudents: () => request('/admin/students'),
+    getInternships: () => request('/admin/internships'),
+    updateInternship: (id, internshipData) =>
+      request(`/admin/internships/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(internshipData),
+      }),
+  },
 }
 
 export default api

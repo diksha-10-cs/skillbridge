@@ -412,6 +412,30 @@
   background: rgba(220, 38, 38, 0.1);
 }
 
+.edit-button {
+  padding: 9px 16px;
+  border: 1.5px solid var(--border-color, #bae6fd);
+  border-radius: 10px;
+  background: var(--bg-tertiary, #eef8ff);
+  color: var(--primary-color, #0284c7);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+  background: var(--primary-color, #0284c7);
+  color: #ffffff;
+  border-color: var(--primary-color, #0284c7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
 /* Amazon / Flipkart Style Tactile Danger Button */
 .delete-button {
   padding: 9px 16px;

@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "test": "node tests/adminAuthorization.test.js",
+    "provision:admin": "node scripts/provisionAdmin.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -50,20 +50,33 @@ function Navbar() {
 
           {isAuthenticated ? (
             <>
-              <Link
-                to="/dashboard"
-                className={`nav-link ${location.pathname === '/dashboard' ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                Dashboard
-              </Link>
-              <Link
-                to="/add-internship"
-                className={`nav-link ${location.pathname === '/add-internship' ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                + Add Internship
-              </Link>
+              {user?.role !== 'admin' && (
+                <Link
+                  to="/dashboard"
+                  className={`nav-link ${location.pathname === '/dashboard' ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  Dashboard
+                </Link>
+              )}
+              {user?.role === 'admin' && (
+                <Link
+                  to="/admin"
+                  className={`nav-link ${location.pathname === '/admin' ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  Admin Panel
+                </Link>
+              )}
+              {user?.role !== 'admin' && (
+                <Link
+                  to="/add-internship"
+                  className={`nav-link ${location.pathname === '/add-internship' ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  + Add Internship
+                </Link>
+              )}
               <Link
                 to="/profile"
                 className={`nav-link ${location.pathname === '/profile' ? 'active' : ''}`}

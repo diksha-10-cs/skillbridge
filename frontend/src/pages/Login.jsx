@@ -1,11 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import './Auth.css'
 
 function Login() {
   const navigate = useNavigate()
-  const { login } = useAuth()
+  const { user, isAuthenticated, login } = useAuth()
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      if (user?.role === 'admin') {
+        navigate('/admin', { replace: true })
+      } else {
+        navigate('/dashboard', { replace: true })
+      }
+    }
+  }, [isAuthenticated, user, navigate])
 
   const [formData, setFormData] = useState({
     email: '',
@@ -40,8 +51,12 @@ function Login() {
     try {
       setLoading(true)
       setError('')
-      await login(formData.email.trim(), formData.password)
-      navigate('/dashboard')
+      const loggedInUser = await login(formData.email.trim(), formData.password)
+      if (loggedInUser?.role === 'admin') {
+        navigate('/admin', { replace: true })
+      } else {
+        navigate('/dashboard', { replace: true })
+      }
     } catch (err) {
       setError(err.message || 'Login failed. Please check your credentials.')
     } finally {

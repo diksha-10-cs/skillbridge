@@ -10,7 +10,10 @@ export const protect = async (req, res, next) => {
   ) {
     try {
       token = req.headers.authorization.split(' ')[1]
-      const secret = process.env.JWT_SECRET || 'skillbridge_jwt_secret_key_2026_academic_secure'
+      const secret = process.env.JWT_SECRET
+      if (!secret || !secret.trim()) {
+        throw new Error('JWT_SECRET environment variable is not configured.')
+      }
       const decoded = jwt.verify(token, secret)
 
       const user = await User.findById(decoded.id).select('-password')
@@ -38,4 +41,15 @@ export const protect = async (req, res, next) => {
       message: 'Not authorized: No authentication token provided.',
     })
   }
+}
+
+export const requireAdmin = (req, res, next) => {
+  if (req.user && req.user.role === 'admin') {
+    return next()
+  }
+
+  return res.status(403).json({
+    success: false,
+    message: 'Forbidden: Administrator access required.',
+  })
 }

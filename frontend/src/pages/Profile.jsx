@@ -44,19 +44,51 @@ function Profile() {
     setErrorMsg('')
   }
 
+  const isAdmin = user?.role === 'admin'
+
+  function handleCancel() {
+    setIsEditing(false)
+    setErrorMsg('')
+    if (user) {
+      setProfileData({
+        fullName: user.fullName || '',
+        email: user.email || '',
+        course: user.course || '',
+        college: user.college || '',
+        skills: user.skills || '',
+        projects: user.projects || '',
+      })
+    }
+  }
+
   async function handleSubmit(event) {
     event.preventDefault()
 
     try {
       setLoading(true)
       setErrorMsg('')
-      await updateProfile({
-        fullName: profileData.fullName.trim(),
-        course: profileData.course.trim(),
-        college: profileData.college.trim(),
-        skills: profileData.skills.trim(),
-        projects: profileData.projects.trim(),
-      })
+      const updatedUser = await updateProfile(
+        isAdmin
+          ? { fullName: profileData.fullName.trim() }
+          : {
+              fullName: profileData.fullName.trim(),
+              course: profileData.course.trim(),
+              college: profileData.college.trim(),
+              skills: profileData.skills.trim(),
+              projects: profileData.projects.trim(),
+            }
+      )
+
+      if (updatedUser) {
+        setProfileData({
+          fullName: updatedUser.fullName || '',
+          email: updatedUser.email || '',
+          course: updatedUser.course || '',
+          college: updatedUser.college || '',
+          skills: updatedUser.skills || '',
+          projects: updatedUser.projects || '',
+        })
+      }
 
       setIsEditing(false)
       setSuccessMsg('Profile updated successfully in MongoDB database!')
@@ -80,10 +112,14 @@ function Profile() {
     <div className="auth-container">
       <div className="auth-card auth-card-wide">
         <div className="auth-header">
-          <div className="auth-brand-badge">🎓 Student Portfolio & Profile</div>
-          <h1>Student Credentials</h1>
+          <div className="auth-brand-badge">
+            {isAdmin ? '🛡️ Administrator Account' : '🎓 Student Portfolio & Profile'}
+          </div>
+          <h1>{isAdmin ? 'Admin Profile' : 'Student Credentials'}</h1>
           <p className="auth-subtitle">
-            Manage your degree, college, technical skill tags, and featured project links
+            {isAdmin
+              ? 'Administrator account credentials and role details'
+              : 'Manage your degree, college, technical skill tags, and featured project links'}
           </p>
         </div>
 
@@ -101,7 +137,10 @@ function Profile() {
                 placeholder="Enter your full name"
                 value={profileData.fullName}
                 onChange={handleChange}
-                disabled={!isEditing}
+                readOnly={!isEditing}
+                onClick={() => {
+                  if (!isEditing) setIsEditing(true)
+                }}
                 required
               />
             </div>
@@ -118,69 +157,96 @@ function Profile() {
             </div>
           </div>
 
-          <div className="form-row">
+          {isAdmin ? (
             <div className="form-group">
-              <label htmlFor="course">Degree / Major</label>
+              <label htmlFor="role">Role</label>
               <input
-                id="course"
+                id="role"
                 type="text"
-                name="course"
-                placeholder="e.g. B.Sc Computer Science / B.Tech IT"
-                value={profileData.course}
-                onChange={handleChange}
-                disabled={!isEditing}
+                name="role"
+                value="Admin"
+                disabled={true}
               />
             </div>
+          ) : (
+            <>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="course">Degree / Major</label>
+                  <input
+                    id="course"
+                    type="text"
+                    name="course"
+                    placeholder="e.g. B.Sc Computer Science / B.Tech IT"
+                    value={profileData.course}
+                    onChange={handleChange}
+                    readOnly={!isEditing}
+                    onClick={() => {
+                      if (!isEditing) setIsEditing(true)
+                    }}
+                  />
+                </div>
 
-            <div className="form-group">
-              <label htmlFor="college">College / University</label>
-              <input
-                id="college"
-                type="text"
-                name="college"
-                placeholder="Enter your college or university"
-                value={profileData.college}
-                onChange={handleChange}
-                disabled={!isEditing}
-              />
-            </div>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="skills">Technical Skills (Comma separated)</label>
-            <input
-              id="skills"
-              type="text"
-              name="skills"
-              placeholder="e.g. React, Node.js, Python, MongoDB, SQL, Tailwind"
-              value={profileData.skills}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-
-            {!isEditing && skillTags.length > 0 && (
-              <div className="skills-tags-list">
-                {skillTags.map((skill, index) => (
-                  <span key={index} className="skill-tag-pill">
-                    💻 {skill}
-                  </span>
-                ))}
+                <div className="form-group">
+                  <label htmlFor="college">College / University</label>
+                  <input
+                    id="college"
+                    type="text"
+                    name="college"
+                    placeholder="Enter your college or university"
+                    value={profileData.college}
+                    onChange={handleChange}
+                    readOnly={!isEditing}
+                    onClick={() => {
+                      if (!isEditing) setIsEditing(true)
+                    }}
+                  />
+                </div>
               </div>
-            )}
-          </div>
 
-          <div className="form-group">
-            <label htmlFor="projects">Featured Projects & Live Demos</label>
-            <textarea
-              id="projects"
-              name="projects"
-              rows={3}
-              placeholder="e.g. SkillBridge Internship Portal, StudyFlow Task Manager"
-              value={profileData.projects}
-              onChange={handleChange}
-              disabled={!isEditing}
-            />
-          </div>
+              <div className="form-group">
+                <label htmlFor="skills">Technical Skills (Comma separated)</label>
+                <input
+                  id="skills"
+                  type="text"
+                  name="skills"
+                  placeholder="e.g. React, Node.js, Python, MongoDB, SQL, Tailwind"
+                  value={profileData.skills}
+                  onChange={handleChange}
+                  readOnly={!isEditing}
+                  onClick={() => {
+                    if (!isEditing) setIsEditing(true)
+                  }}
+                />
+
+                {!isEditing && skillTags.length > 0 && (
+                  <div className="skills-tags-list">
+                    {skillTags.map((skill, index) => (
+                      <span key={index} className="skill-tag-pill">
+                        💻 {skill}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="projects">Featured Projects & Live Demos</label>
+                <textarea
+                  id="projects"
+                  name="projects"
+                  rows={3}
+                  placeholder="e.g. SkillBridge Internship Portal, StudyFlow Task Manager"
+                  value={profileData.projects}
+                  onChange={handleChange}
+                  readOnly={!isEditing}
+                  onClick={() => {
+                    if (!isEditing) setIsEditing(true)
+                  }}
+                />
+              </div>
+            </>
+          )}
 
           <div style={{ display: 'flex', gap: 12, marginTop: 10 }}>
             {isEditing ? (
@@ -192,7 +258,7 @@ function Profile() {
                   type="button"
                   className="auth-btn auth-btn-secondary"
                   style={{ flex: 0.6 }}
-                  onClick={() => setIsEditing(false)}
+                  onClick={handleCancel}
                 >
                   Cancel
                 </button>
@@ -204,14 +270,16 @@ function Profile() {
                 style={{ flex: 1 }}
                 onClick={() => setIsEditing(true)}
               >
-                ✏️ Edit Student Information
+                {isAdmin ? '✏️ Edit Profile' : '✏️ Edit Student Information'}
               </button>
             )}
           </div>
         </form>
 
         <div className="auth-footer">
-          <Link to="/dashboard">← Back to Dashboard</Link>
+          <Link to={isAdmin ? '/admin' : '/dashboard'}>
+            ← Back to {isAdmin ? 'Admin Panel' : 'Dashboard'}
+          </Link>
         </div>
       </div>
     </div>

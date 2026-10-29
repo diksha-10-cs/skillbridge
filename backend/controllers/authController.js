@@ -3,9 +3,12 @@ import User from '../models/User.js'
 import Internship from '../models/Internship.js'
 
 // Helper: Generate JWT Token
-const generateToken = (id, email, fullName) => {
-  const secret = process.env.JWT_SECRET || 'skillbridge_jwt_secret_key_2026_academic_secure'
-  return jwt.sign({ id, email, fullName }, secret, {
+const generateToken = (id, email, fullName, role = 'student') => {
+  const secret = process.env.JWT_SECRET
+  if (!secret || !secret.trim()) {
+    throw new Error('JWT_SECRET environment variable is not configured.')
+  }
+  return jwt.sign({ id, email, fullName, role }, secret, {
     expiresIn: '30d',
   })
 }
@@ -90,6 +93,7 @@ export const register = async (req, res) => {
       college: college || '',
       skills: 'React, JavaScript, HTML, CSS',
       projects: 'SkillBridge Internship Tracker',
+      role: 'student',
     })
 
     if (user) {
@@ -98,11 +102,12 @@ export const register = async (req, res) => {
 
       res.status(201).json({
         success: true,
-        token: generateToken(user._id, user.email, user.fullName),
+        token: generateToken(user._id, user.email, user.fullName, user.role || 'student'),
         user: {
           id: user._id,
           fullName: user.fullName,
           email: user.email,
+          role: user.role || 'student',
           course: user.course,
           college: user.college,
           skills: user.skills,
@@ -143,11 +148,12 @@ export const login = async (req, res) => {
     if (user && (await user.matchPassword(password))) {
       res.json({
         success: true,
-        token: generateToken(user._id, user.email, user.fullName),
+        token: generateToken(user._id, user.email, user.fullName, user.role || 'student'),
         user: {
           id: user._id,
           fullName: user.fullName,
           email: user.email,
+          role: user.role || 'student',
           course: user.course,
           college: user.college,
           skills: user.skills,
@@ -182,6 +188,7 @@ export const getProfile = async (req, res) => {
           id: user._id,
           fullName: user.fullName,
           email: user.email,
+          role: user.role || 'student',
           course: user.course,
           college: user.college,
           skills: user.skills,
@@ -234,6 +241,7 @@ export const updateProfile = async (req, res) => {
         id: updatedUser._id,
         fullName: updatedUser.fullName,
         email: updatedUser.email,
+        role: updatedUser.role || 'student',
         course: updatedUser.course,
         college: updatedUser.college,
         skills: updatedUser.skills,

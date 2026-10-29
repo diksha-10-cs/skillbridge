@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, Navigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { api } from '../services/api'
+import EditInternshipModal from '../components/EditInternshipModal'
 import './Dashboard.css'
 
 function Dashboard() {
   const navigate = useNavigate()
   const { user } = useAuth()
+
+  // Guard: Admin users must not be shown the student dashboard
+  if (user?.role === 'admin') {
+    return <Navigate to="/admin" replace />
+  }
 
   const [internships, setInternships] = useState([])
   const [stats, setStats] = useState({ total: 0, applied: 0, interview: 0, selected: 0, rejected: 0 })
@@ -14,6 +20,10 @@ function Dashboard() {
   const [error, setError] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedFilter, setSelectedFilter] = useState('All')
+
+  // Edit modal state
+  const [editingInternship, setEditingInternship] = useState(null)
+  const [editModalOpen, setEditModalOpen] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -77,6 +87,34 @@ function Dashboard() {
     } catch (err) {
       console.error('Failed to delete application:', err)
       alert(`Could not delete application: ${err.message}`)
+    }
+  }
+
+  const handleOpenEdit = (app) => {
+    setEditingInternship(app)
+    setEditModalOpen(true)
+  }
+
+  const handleCloseEdit = () => {
+    setEditingInternship(null)
+    setEditModalOpen(false)
+  }
+
+  const handleSaveEdit = async (id, updatedData) => {
+    const res = await api.internships.update(id, updatedData)
+    if (res.success && res.data) {
+      setInternships((prev) =>
+        prev.map((app) => (app._id === id ? res.data : app))
+      )
+    } else {
+      setInternships((prev) =>
+        prev.map((app) => (app._id === id ? { ...app, ...updatedData } : app))
+      )
+    }
+
+    const statsRes = await api.internships.getStats()
+    if (statsRes.success) {
+      setStats(statsRes.data)
     }
   }
 
@@ -257,6 +295,14 @@ function Dashboard() {
                   </select>
 
                   <button
+                    className="edit-button"
+                    onClick={() => handleOpenEdit(app)}
+                    title="Edit Application Details"
+                  >
+                    ✏️ Edit
+                  </button>
+
+                  <button
                     className="delete-button"
                     onClick={() => handleDelete(app._id)}
                     title="Delete Application"
@@ -268,6 +314,14 @@ function Dashboard() {
             ))}
           </div>
         )}
+
+        {/* Edit Application Details Modal */}
+        <EditInternshipModal
+          isOpen={editModalOpen}
+          internship={editingInternship}
+          onClose={handleCloseEdit}
+          onSave={handleSaveEdit}
+        />
       </div>
     </div>
   )

@@ -5,7 +5,17 @@ import './Hero.css'
 
 function Hero() {
   const navigate = useNavigate()
-  const { isAuthenticated } = useAuth()
+  const { user, isAuthenticated } = useAuth()
+
+  const handleCtaClick = () => {
+    if (!isAuthenticated) {
+      navigate('/signup')
+    } else if (user?.role === 'admin') {
+      navigate('/admin')
+    } else {
+      navigate('/dashboard')
+    }
+  }
 
   return (
     <section className="hero">
@@ -27,9 +37,9 @@ function Hero() {
           <div className="hero-cta-group">
             <button
               className="hero-btn-primary"
-              onClick={() => navigate(isAuthenticated ? '/dashboard' : '/signup')}
+              onClick={handleCtaClick}
             >
-              {isAuthenticated ? 'Go to Dashboard →' : 'Get Started Free →'}
+              {isAuthenticated ? (user?.role === 'admin' ? 'Open Admin Panel →' : 'Go to Dashboard →') : 'Get Started Free →'}
             </button>
 
             <a href="#features" className="hero-btn-secondary">

@@ -13,6 +13,7 @@ import Login from './pages/Login'
 import Profile from './pages/Profile'
 import AddInternship from './pages/AddInternship'
 import Dashboard from './pages/Dashboard'
+import AdminDashboard from './pages/AdminDashboard'
 
 function LandingPage() {
   return (
@@ -56,6 +57,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Profile />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <AdminDashboard />
                 </ProtectedRoute>
               }
             />

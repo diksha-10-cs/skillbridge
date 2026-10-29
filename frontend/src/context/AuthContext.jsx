@@ -35,10 +35,10 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     const res = await api.auth.login({ email, password })
     if (res.success && res.token) {
-      setToken(res.token)
-      setUser(res.user)
       localStorage.setItem('skillbridge_token', res.token)
       localStorage.setItem('skillbridge_user', JSON.stringify(res.user))
+      setToken(res.token)
+      setUser(res.user)
       return res.user
     }
   }
@@ -46,10 +46,10 @@ export function AuthProvider({ children }) {
   const register = async (userData) => {
     const res = await api.auth.register(userData)
     if (res.success && res.token) {
-      setToken(res.token)
-      setUser(res.user)
       localStorage.setItem('skillbridge_token', res.token)
       localStorage.setItem('skillbridge_user', JSON.stringify(res.user))
+      setToken(res.token)
+      setUser(res.user)
       return res.user
     }
   }
@@ -64,8 +64,8 @@ export function AuthProvider({ children }) {
   const updateProfile = async (profileData) => {
     const res = await api.auth.updateProfile(profileData)
     if (res.success && res.user) {
-      setUser(res.user)
       localStorage.setItem('skillbridge_user', JSON.stringify(res.user))
+      setUser(res.user)
       return res.user
     }
   }

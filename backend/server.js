@@ -1,13 +1,26 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import { connectDB } from './config/db.js'
 
 import authRoutes from './routes/authRoutes.js'
 import internshipRoutes from './routes/internshipRoutes.js'
+import adminRoutes from './routes/adminRoutes.js'
 
-dotenv.config()
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
+dotenv.config({ path: path.join(__dirname, '.env'), override: true })
+
+if (!process.env.JWT_SECRET || !process.env.JWT_SECRET.trim()) {
+  console.error('FATAL: JWT_SECRET environment variable is missing or empty. Server startup aborted.')
+  process.exit(1)
+}
+
+const activeMongoUri = process.env.MONGO_URI || process.env.MONGODB_URI
+console.log("MONGO_URI loaded:", Boolean(activeMongoUri?.startsWith("mongodb+srv://")))
 const app = express()
 const PORT = process.env.PORT || 5000
 
@@ -17,8 +30,7 @@ connectDB()
 // Enable CORS
 app.use(
   cors({
-    origin: '*',
-    credentials: true,
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
@@ -41,6 +53,7 @@ app.get('/api/health', (req, res) => {
 // Mount API Routes
 app.use('/api/auth', authRoutes)
 app.use('/api/internships', internshipRoutes)
+app.use('/api/admin', adminRoutes)
 
 // 404 Handler
 app.use((req, res) => {

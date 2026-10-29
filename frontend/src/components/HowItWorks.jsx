@@ -4,7 +4,17 @@ import './HowItWorks.css'
 
 function HowItWorks() {
   const navigate = useNavigate()
-  const { isAuthenticated } = useAuth()
+  const { user, isAuthenticated } = useAuth()
+
+  const handleCtaClick = () => {
+    if (!isAuthenticated) {
+      navigate('/signup')
+    } else if (user?.role === 'admin') {
+      navigate('/admin')
+    } else {
+      navigate('/dashboard')
+    }
+  }
 
   return (
     <section id="how-it-works" className="how-it-works">
@@ -57,9 +67,9 @@ function HowItWorks() {
           </div>
           <button
             className="how-cta-btn"
-            onClick={() => navigate(isAuthenticated ? '/dashboard' : '/signup')}
+            onClick={handleCtaClick}
           >
-            {isAuthenticated ? 'Open Dashboard →' : 'Sign Up Free Today →'}
+            {isAuthenticated ? (user?.role === 'admin' ? 'Open Admin Panel →' : 'Open Dashboard →') : 'Sign Up Free Today →'}
           </button>
         </div>
       </div>
