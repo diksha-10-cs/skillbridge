@@ -10,7 +10,7 @@
     "backend": "node backend/server.js",
     "backend:dev": "node --watch backend/server.js",
     "frontend": "npm run --prefix frontend dev",
-    "build": "npm run --prefix frontend build",
+    "build": "npm --prefix frontend install && npm run --prefix frontend build",
     "provision:admin": "npm run --prefix backend provision:admin",
     "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend"
   },
