@@ -28,11 +28,13 @@ const PORT = process.env.PORT || 5000
 connectDB()
 
 // Enable CORS
+const allowedOrigin = process.env.CLIENT_URL || 'http://localhost:5173'
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.VERCEL ? true : allowedOrigin,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   })
 )
 
@@ -41,7 +43,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Health Check API
-app.get('/api/health', (req, res) => {
+app.get(['/api/health', '/health'], (req, res) => {
   res.json({
     status: 'OK',
     app: 'SkillBridge API Server',
@@ -50,10 +52,10 @@ app.get('/api/health', (req, res) => {
   })
 })
 
-// Mount API Routes
-app.use('/api/auth', authRoutes)
-app.use('/api/internships', internshipRoutes)
-app.use('/api/admin', adminRoutes)
+// Mount API Routes (supports both /api/* and serverless stripped /* paths)
+app.use(['/api/auth', '/auth'], authRoutes)
+app.use(['/api/internships', '/internships'], internshipRoutes)
+app.use(['/api/admin', '/admin'], adminRoutes)
 
 // 404 Handler
 app.use((req, res) => {
@@ -72,9 +74,15 @@ app.use((err, req, res, _next) => {
   })
 })
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 SkillBridge API Server running on port ${PORT} (http://localhost:${PORT})`)
-})
+// Start server (only when executed directly, not when imported by serverless handlers or tests)
+const isDirectRun =
+  process.argv[1] &&
+  fileURLToPath(import.meta.url) === path.resolve(process.argv[1])
+
+if (isDirectRun && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 SkillBridge API Server running on port ${PORT} (http://localhost:${PORT})`)
+  })
+}
 
 export default app
